@@ -16,8 +16,13 @@ listaPares = filter(lambda x: x % 2 == 0, lista)
 listaPares1 = filter(esPar, lista) # es lamisma que listaPares pero sin meter lambda y definiendo previamente una función
 
 
-sumatorio = reduce(lambda x, y: x + y, lista) #reduce me va a reducir todo la lista a un solo valor
-sumatorioDobles = reduce(lambda x, y: x + y*2, lista)
+sumatorio = reduce(lambda x, y: x + y, lista) # reduce me va a reducir toda la lista a un solo valor
+
+# Creo una copia de la lista
+l = lista[:]
+# añado el neutro para la suma en la posición ceco
+l.insert(0,0)
+sumatorioDobles = reduce(lambda x, y: x + y*2, l) 
 
 suma100 = reduce(lambda x, y: x + y, range(101))
 
